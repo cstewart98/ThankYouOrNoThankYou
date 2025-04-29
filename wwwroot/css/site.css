@@ -1,0 +1,40 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  background-color: #000080;
+  color: #FFFFFF
+}
+
+.border-length {
+  width: 400px;
+}
+
+.doggie {
+  height: 110px;
+  width: 110px;
+  margin-right: 20px;
+}
+
+.doggo {
+  height: 300px;
+  width: 300px;
+}
+
+.bg-grey
+{
+  background-color: #525252;
+}

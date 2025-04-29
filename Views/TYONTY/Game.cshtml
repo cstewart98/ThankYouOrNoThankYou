@@ -1,0 +1,468 @@
+@model Contestant
+@{
+    ViewData["Title"] = "Game";
+    int Prize1 = Context.Session.GetInt32("Prize1") ?? 0;
+    int Prize2 = Context.Session.GetInt32("Prize2") ?? 0;
+    int Prize3 = Context.Session.GetInt32("Prize3") ?? 0;
+    int Prize4 = Context.Session.GetInt32("Prize4") ?? 0;
+    int Prize5 = Context.Session.GetInt32("Prize5") ?? 0;
+    int Prize6 = Context.Session.GetInt32("Prize6") ?? 0;
+    int Prize7 = Context.Session.GetInt32("Prize7") ?? 0;
+    int Prize8 = Context.Session.GetInt32("Prize8") ?? 0;
+    int Prize9 = Context.Session.GetInt32("Prize9") ?? 0;
+    int Prize10 = Context.Session.GetInt32("Prize10") ?? 0;
+    int Prize11 = Context.Session.GetInt32("Prize11") ?? 0;
+    int Prize12 = Context.Session.GetInt32("Prize12") ?? 0;
+    int Prize13 = Context.Session.GetInt32("Prize13") ?? 0;
+    int Prize14 = Context.Session.GetInt32("Prize14") ?? 0;
+    int Prize15 = Context.Session.GetInt32("Prize15") ?? 0;
+    int Prize16 = Context.Session.GetInt32("Prize16") ?? 0;
+    int Prize17 = Context.Session.GetInt32("Prize17") ?? 0;
+    int Prize18 = Context.Session.GetInt32("Prize18") ?? 0;
+    int Prize19 = Context.Session.GetInt32("Prize19") ?? 0;
+    int Prize20 = Context.Session.GetInt32("Prize20") ?? 0;
+    int Prize21 = Context.Session.GetInt32("Prize21") ?? 0;
+    int Prize22 = Context.Session.GetInt32("Prize22") ?? 0;
+    int Prize23 = Context.Session.GetInt32("Prize23") ?? 0;
+    int Prize24 = Context.Session.GetInt32("Prize24") ?? 0;
+    int Prize25 = Context.Session.GetInt32("Prize25") ?? 0;
+    int Prize26 = Context.Session.GetInt32("Prize26") ?? 0;
+
+    string Fido = Context.Session.GetString("Fido");
+    string Maxwell = Context.Session.GetString("Maxwell");
+    string Lucky = Context.Session.GetString("Lucky");
+    string Daisy = Context.Session.GetString("Daisy");
+    string Buddy = Context.Session.GetString("Buddy");
+    string Ralph = Context.Session.GetString("Ralph");
+    string Scotty = Context.Session.GetString("Scotty");
+    string Maggie = Context.Session.GetString("Maggie");
+    string Cutie = Context.Session.GetString("Cutie");
+    string Rex = Context.Session.GetString("Rex");
+    string Spot = Context.Session.GetString("Spot");
+    string Coco = Context.Session.GetString("Coco");
+    string Rover = Context.Session.GetString("Rover");
+    string Spudnik = Context.Session.GetString("Spudnik");
+    string Lassie = Context.Session.GetString("Lassie");
+    string Shadow = Context.Session.GetString("Shadow");
+    string Marco = Context.Session.GetString("Marco");
+    string Sparkie = Context.Session.GetString("Sparkie");
+    string Missy = Context.Session.GetString("Missy");
+    string LittleBit = Context.Session.GetString("Little-Bit");
+    string Bear = Context.Session.GetString("Bear");
+    string Spike = Context.Session.GetString("Spike");
+    string Junior = Context.Session.GetString("Junior");
+    string Alpha = Context.Session.GetString("Alpha");
+    string Astro = Context.Session.GetString("Astro");
+    string Ember = Context.Session.GetString("Ember");
+}
+
+@await Html.PartialAsync("_Title")
+
+
+@* Setting up the "board" *@
+<div class="d-flex justify-content-between"> 
+    <div class=""> @* Lower Half of Prizes *@
+        @if(Prize1>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">$1</p>
+        }
+        else
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">$1</p>
+        }
+
+        @if(Prize2>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">1 Acre of the Moon</p>
+        }
+        else
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">1 Acre of the Moon</p>
+        }
+
+        @if(Prize3>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">$25 iTunes Card</p>
+        }
+        else 
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">$25 iTunes Card</p>
+        }
+
+        @if(Prize4>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">$100 Amazon Card</p>
+        }
+        else
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">$100 Amazon Card</p>
+        }
+
+        @if(Prize5>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">50" Flat Screen TV</p>
+        }
+        else
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">50" Flat Screen TV</p>
+        }
+
+        @if(Prize6>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">PS5</p>
+        }
+        else 
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">PS5</p>
+        }
+
+        @if(Prize7>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">5-Day Aspen Ski Trip</p>
+        }
+        else 
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">5-Day Aspen Ski Trip</p>
+        }
+        
+        @if(Prize8>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">Tour of NASA</p>
+        }
+        else 
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">Tour of NASA</p>
+        }
+
+        @if(Prize10>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">$1,000</p>
+        }
+        else
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">$1,000</p>
+        }
+
+        @if(Prize11>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">Bahama Cruise for 4</p>
+        }
+        else
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">Bahama Cruise for 4</p>
+        }
+
+        @if(Prize12>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">Latest iPhone</p>
+        }
+        else
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">Latest iPhone</p>
+        }
+        @if(Prize9>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">Visit Every MLB Stadium</p>
+        }
+        else
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">Visit Every MLB Stadium</p>
+        }
+
+        @if(Prize13>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">Gas for a Year</p>
+        }
+        else
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">Gas for a Year</p>
+        }
+
+    </div>
+
+    <div class="mt-5"> @* Host of the Show *@
+        <img src="~/img/JoelMyhrr.png" class="mt-5"
+            alt="A man white brown hair and blue eyes. He is wearing an earpiece">
+        <h4>Pick a dog...</h4>
+
+    </div>
+    <div> @* Upper Half of Prizes *@
+        @if(Prize14>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">Grand Piano</p>
+        }
+        else
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">Grand Piano</p>
+        }
+
+        @if(Prize15>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">Guadeloupe Shark Diving Trip for 2</p>
+        }
+        else
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">Guadeloupe Shark Diving Trip for 2</p>
+        }
+
+        @if(Prize16>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">A Week at Disney World for 4</p>
+        }
+        else
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">A Week at Disney World for 4</p>
+        }
+
+        @if(Prize17>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">Super Bowl Ticket</p>
+        }
+        else
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">Super Bowl Ticket</p>
+        }
+
+        @if(Prize18>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">Harley Davdison</p>
+        }
+        else
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">Harley Davdison</p>
+        }
+
+        @if(Prize19>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">$20k College Scholarship</p>
+        }
+        else
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">$20k College Scholarship</p>
+        }
+
+        @if(Prize20>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">Swimming Pool</p>
+        }
+        else
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">Swimming Pool</p>
+        }
+
+        @if(Prize21>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">Rolex</p>
+        }
+        else
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">Rolex</p>
+        }
+
+        @if(Prize22>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">RV</p>
+        }
+        else
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">RV</p>
+        }
+
+        @if(Prize23>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">$50,000</p>
+        }
+        else
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">$50,000</p>
+        }
+
+        @if(Prize24>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">$100,000</p>
+        }
+        else
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">$100,000</p>
+        }
+
+        @if(Prize25>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">$500,000</p>
+        }
+        else
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">$500,000</p>
+        }
+        
+        @if(Prize26>0)
+        {
+            <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">Lamborghini</p>
+        }
+        else
+        {
+            <p class="border border-dark bg-dark h4 text-light fw-bold p-1 border-length text-center">Lamborghini</p>
+        }
+
+    </div>
+</div>
+
+@* Display Puppies That You Will Eliminate *@
+<div class="text-center mt-5 mt-5">
+    <div class="d-flex flex-wrap justify-content-center mt-5">
+        @if(Fido != "Pick")
+        {
+            <a href="/tyonty/Fido/drop"><img class="doggie secondImages" src="~/img/Fido.png"></a>
+        }
+
+        @if(Maxwell != "Pick")
+        {
+            <a href="/tyonty/Maxwell/drop"><img class="doggie secondImages" src="~/img/Maxwell.png"></a>
+        }
+
+        @if(Lucky != "Pick")
+        {
+            <a href="/tyonty/Lucky/drop"><img class="doggie secondImages" src="~/img/Lucky.png"></a>
+        }
+
+        @if(Daisy != "Pick")
+        {
+            <a href="/tyonty/Daisy/drop"><img class="doggie secondImages" src="~/img/Daisy.png"></a>
+        }
+
+        @if(Buddy != "Pick")
+        {
+            <a href="/tyonty/Buddy/drop"><img class="doggie secondImages" src="~/img/Buddy.png"></a>
+        }
+
+        @if(Ralph != "Pick")
+        {
+            <a href="/tyonty/Ralph/drop"><img class="doggie secondImages" src="~/img/Ralph.png"></a>
+        }
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-center mt-5">
+        @if(Scotty != "Pick")
+        {
+            <a href="/tyonty/Scotty/drop"><img class="doggie secondImages" src="~/img/Scotty.png"></a>
+        }
+
+        @if(Maggie != "Pick")
+        {
+            <a href="/tyonty/Maggie/drop"><img class="doggie secondImages" src="~/img/Maggie.png"></a>
+        }
+
+        @if(Cutie != "Pick")
+        {
+            <a href="/tyonty/Cutie/drop"><img class="doggie secondImages" src="~/img/Cutie.png"></a>
+        }
+
+        @if(Rex != "Pick")
+        {
+            <a href="/tyonty/Rex/drop"><img class="doggie secondImages" src="~/img/Rex.png"></a>
+        }
+
+        @if(Spot != "Pick")
+        {
+            <a href="/tyonty/Spot/drop"><img class="doggie secondImages" src="~/img/Spot.png"></a>
+        }
+
+        @if(Coco != "Pick")
+        {
+            <a href="/tyonty/Coco/drop"><img class="doggie secondImages" src="~/img/Coco.png"></a>
+        }
+
+        @if(Rover != "Pick")
+        {
+            <a href="/tyonty/Rover/drop"><img class="doggie secondImages" src="~/img/Rover.png"></a>
+        }
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-center mt-5">
+        @if(Spudnik != "Pick")
+        {
+            <a href="/tyonty/Spudnik/drop"><img class="doggie secondImages" src="~/img/Spudnik.png"></a>
+        }
+
+        @if(Lassie != "Pick")
+        {
+            <a href="/tyonty/Lassie/drop"><img class="doggie secondImages" src="~/img/Lassie.png"></a>
+        }
+
+        @if(Shadow != "Pick")
+        {
+            <a href="/tyonty/Shadow/drop"><img class="doggie secondImages" src="~/img/Shadow.png"></a>
+        }
+
+        @if(Marco != "Pick")
+        {
+            <a href="/tyonty/Marco/drop"><img class="doggie secondImages" src="~/img/Marco.png"></a>
+        }
+
+        @if(Sparkie != "Pick")
+        {
+            <a href="/tyonty/Sparkie/drop"><img class="doggie secondImages" src="~/img/Sparkie.png"></a>
+        }
+
+        @if(Missy != "Pick")
+        {
+            <a href="/tyonty/Missy/drop"><img class="doggie secondImages" src="~/img/Missy.png"></a>
+        }
+
+        @if(LittleBit != "Pick")
+        {
+            <a href="/tyonty/Little-Bit/drop"><img class="doggie secondImages" src="~/img/Little-Bit.png"></a>
+        }
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-center mt-5">
+        @if(Bear != "Pick")
+        {
+            <a href="/tyonty/Bear/drop"><img class="doggie secondImages" src="~/img/Bear.png"></a>
+        }
+
+        @if(Spike != "Pick")
+        {
+            <a href="/tyonty/Spike/drop"><img class="doggie secondImages" src="~/img/Spike.png"></a>
+        }
+
+        @if(Junior != "Pick")
+        {
+            <a href="/tyonty/Junior/drop"><img class="doggie secondImages" src="~/img/Junior.png"></a>
+        }
+
+        @if(Alpha != "Pick")
+        {
+            <a href="/tyonty/Alpha/drop"><img class="doggie secondImages" src="~/img/Alpha.png"></a>
+        }
+
+        @if(Astro != "Pick")
+        {
+            <a href="/tyonty/Astro/drop"><img class="doggie secondImages" src="~/img/Astro.png"></a>
+        }
+
+        @if(Ember != "Pick")
+        {
+            <a href="/tyonty/Ember/drop"><img class="doggie secondImages" src="~/img/Ember.png"></a>
+        }
+    </div>
+</div>
+
+<div class="text-center mt-5">
+<img class="doggie" id="dogImage" src="">
+<h4>You picked: @Context.Session.GetString("yourDog")</h4>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const dogName = '@Context.Session.GetString("yourDog")';
+        const dogImageElement = document.getElementById('dogImage');
+        
+        // Assuming images are stored in the /img/ directory and are named based on dogName
+        const imagePath = `/img/${dogName}.png`;
+        
+        // Set the src attribute of the image element
+        dogImageElement.src = imagePath;
+    });
+</script> 

@@ -1,0 +1,182 @@
+@model Contestant
+@{
+    ViewData["Title"] = "Intro";
+}
+
+@await Html.PartialAsync("_Title")
+
+@* Setting up the "board" *@
+<div class="d-flex justify-content-between">
+    <div class=""> @* Lower Half of Prizes *@
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">$1</p>
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">1 Acre of the Moon</p>
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">$25 iTunes Card</p>
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">$100 Amazon Card</p>
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">50" Flat Screen TV</p>
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">PS5</p>
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">5-Day Aspen Ski Trip
+        </p>
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">Tour of NASA</p>
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">$1,000</p>
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">Bahama Cruise for 4</p>
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">Latest iPhone</p>
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">Visit Every MLB Stadium</p>
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">Gas for a Year</p>
+    </div>
+
+    <div class="mt-5"> @* Host of the Show *@
+        <img src="~/img/JoelMyhrr.png" class="mt-5" alt="A man white brown hair and blue eyes. He is wearing an earpiece">
+        <h4 class="text-center" id="message"></h4>
+
+    </div>
+    <div> @* Upper Half of Prizes *@
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">Grand Piano</p>
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">Guadeloupe Shark
+            Diving Trip for 2</p>
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">A Week at Disney World
+            for 4</p>
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">Super Bowl Ticket</p>
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">Harley Davdison</p>
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">$20k College
+            Scholarship</p>
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">Swimming Pool</p>
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">Rolex</p>
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">RV</p>
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">$50,000</p>
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">$100,000</p>
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">$500,000</p>
+        <p class="border border-dark bg-warning h4 text-dark fw-bold p-1 border-length text-center">Lamborghini</p>
+    </div>
+</div>
+
+@* Display Puppies *@
+<div class="text-center mt-5">
+    <div class="mt-5"> @* Row 1 (Dogs 1-6)*@
+        <img class="doggie firstImages" src="~/img/Fido.png">
+        <img class="doggie firstImages" src="~/img/Maxwell.png">
+        <img class="doggie firstImages" src="~/img/Lucky.png">
+        <img class="doggie firstImages" src="~/img/Daisy.png">
+        <img class="doggie firstImages" src="~/img/Buddy.png">
+        <img class="doggie firstImages" src="~/img/Ralph.png">
+    </div>
+    <div class="mt-5"> @* Row 2 (Dogs 7-13)*@
+        <img class="doggie firstImages" src="~/img/Scotty.png">
+        <img class="doggie firstImages" src="~/img/Maggie.png">
+        <img class="doggie firstImages" src="~/img/Cutie.png">
+        <img class="doggie firstImages" src="~/img/Rex.png">
+        <img class="doggie firstImages" src="~/img/Spot.png">
+        <img class="doggie firstImages" src="~/img/Coco.png">
+        <img class="doggie firstImages" src="~/img/Rover.png">
+    </div>
+    <div class="mt-5"> @* Row 3 (Dogs 14-20) *@
+        <img class="doggie firstImages" src="~/img/Spudnik.png">
+        <img class="doggie firstImages" src="~/img/Lassie.png">
+        <img class="doggie firstImages" src="~/img/Shadow.png">
+        <img class="doggie firstImages" src="~/img/Marco.png">
+        <img class="doggie firstImages" src="~/img/Sparkie.png">
+        <img class="doggie firstImages" src="~/img/Missy.png">
+        <img class="doggie firstImages" src="~/img/Little-Bit.png">
+    </div>
+    <div class="mt-5"> @* Row 4 (Dogs 21-26) *@
+        <img class="doggie firstImages" src="~/img/Bear.png">
+        <img class="doggie firstImages" src="~/img/Spike.png">
+        <img class="doggie firstImages" src="~/img/Junior.png">
+        <img class="doggie firstImages" src="~/img/Alpha.png">
+        <img class="doggie firstImages" src="~/img/Astro.png">
+        <img class="doggie firstImages" src="~/img/Ember.png">
+    </div>
+</div>
+
+@* Display Puppies That You Will Pick *@
+<div class="text-center mt-5 mt-5">
+    <div class="d-flex flex-wrap justify-content-center mt-5">
+        <a href="/tyonty/pick/Fido"><img class="doggie secondImages" src="~/img/Fido.png"></a>
+        <a href="/tyonty/pick/Maxwell"><img class="doggie secondImages" src="~/img/Maxwell.png"></a>
+        <a href="/tyonty/pick/Lucky"><img class="doggie secondImages" src="~/img/Lucky.png"></a>
+        <a href="/tyonty/pick/Daisy"><img class="doggie secondImages" src="~/img/Daisy.png"></a>
+        <a href="/tyonty/pick/Buddy"><img class="doggie secondImages" src="~/img/Buddy.png"></a>
+        <a href="/tyonty/pick/Ralph"><img class="doggie secondImages" src="~/img/Ralph.png"></a>
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-center mt-5">
+        <a href="/tyonty/pick/Scotty"><img class="doggie secondImages" src="~/img/Scotty.png"></a>
+        <a href="/tyonty/pick/Maggie"><img class="doggie secondImages" src="~/img/Maggie.png"></a>
+        <a href="/tyonty/pick/Cutie"><img class="doggie secondImages" src="~/img/Cutie.png"></a>
+        <a href="/tyonty/pick/Rex"><img class="doggie secondImages" src="~/img/Rex.png"></a>
+        <a href="/tyonty/pick/Spot"><img class="doggie secondImages" src="~/img/Spot.png"></a>
+        <a href="/tyonty/pick/Coco"><img class="doggie secondImages" src="~/img/Coco.png"></a>
+        <a href="/tyonty/pick/Rover"><img class="doggie secondImages" src="~/img/Rover.png"></a>
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-center mt-5">
+        <a href="/tyonty/pick/Spudnik"><img class="doggie secondImages" src="~/img/Spudnik.png"></a>
+        <a href="/tyonty/pick/Lassie"><img class="doggie secondImages" src="~/img/Lassie.png"></a>
+        <a href="/tyonty/pick/Shadow"><img class="doggie secondImages" src="~/img/Shadow.png"></a>
+        <a href="/tyonty/pick/Marco"><img class="doggie secondImages" src="~/img/Marco.png"></a>
+        <a href="/tyonty/pick/Sparkie"><img class="doggie secondImages" src="~/img/Sparkie.png"></a>
+        <a href="/tyonty/pick/Missy"><img class="doggie secondImages" src="~/img/Missy.png"></a>
+        <a href="/tyonty/pick/Little-Bit"><img class="doggie secondImages" src="~/img/Little-Bit.png"></a>
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-center mt-5">
+        <a href="/tyonty/pick/Bear"><img class="doggie secondImages" src="~/img/Bear.png"></a>
+        <a href="/tyonty/pick/Spike"><img class="doggie secondImages" src="~/img/Spike.png"></a>
+        <a href="/tyonty/pick/Junior"><img class="doggie secondImages" src="~/img/Junior.png"></a>
+        <a href="/tyonty/pick/Alpha"><img class="doggie secondImages" src="~/img/Alpha.png"></a>
+        <a href="/tyonty/pick/Astro"><img class="doggie secondImages" src="~/img/Astro.png"></a>
+        <a href="/tyonty/pick/Ember"><img class="doggie secondImages" src="~/img/Ember.png"></a>
+    </div>
+</div>
+
+<div class="text-center">
+    <img class="mt-5 doggie" src="~/img/emptyKennel.png">
+</div>
+
+<script>
+    // Function to hide all secondImages initially
+    function hideSecondImages() {
+        const secondImages = document.querySelectorAll('.secondImages');
+        secondImages.forEach(image => {
+            image.style.display = 'none';
+        });
+    }
+
+    // Function to change the message after a delay
+    function changeMessage(message, delay) {
+        setTimeout(function () {
+            $('#message').text(message);
+        }, delay);
+    }
+
+    // Function to hide/show images after the message
+    function toggleImages(delay) {
+        setTimeout(function () {
+            const firstImages = document.querySelectorAll('.firstImages');
+            const secondImages = document.querySelectorAll('.secondImages');
+
+            firstImages.forEach(image => {
+                image.style.display = 'none';
+            });
+
+            secondImages.forEach(image => {
+                image.style.display = 'block';
+            });
+        }, delay);
+    }
+
+    // Initial sequence
+    hideSecondImages(); // Hide secondImages initially
+    changeMessage("Hello, my name is Joel Myhrr.", 0);
+    changeMessage("Welcome to Thank You or No Thank You!", 5000);
+    changeMessage("Here we have 26 dogs", 10000);
+    changeMessage("With prizes ranging from a dollar to a brand new Lamborghini!", 15000);
+    changeMessage("You will pick a dog and at the end...", 20000);
+    changeMessage("You can take the dog and the prize home.", 25000);
+    changeMessage("However!", 30000);
+    changeMessage("The Dog Catcher will try to buy your dog & prize for as little as possible.", 35000);
+    changeMessage("In order to find out what your dog has...", 40000);
+    changeMessage("We'll have to see what your dog doesn't have.", 45000);
+    changeMessage("But first...", 50000);
+    toggleImages(55000); // Display secondImages
+    changeMessage("Pick a dog", 56000); // Add your message delay here
+</script>

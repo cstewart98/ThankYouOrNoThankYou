@@ -1,0 +1,48 @@
+@{
+    ViewData["Title"] = "Thank You";
+}
+@await Html.PartialAsync("_Title")
+
+<div class="text-center mt-5">
+    <img src="~/img/joelMyhrr.png" class="doggo">
+    <img src="~/img/TYoNTY_LOGO.png" id="prizeImage" class="doggo">
+    <img src="" id="dogImage" class="doggo">
+</div>
+
+<h3 id="message"></h3>
+
+<div id="playAgain" style="display: none;">
+    <a class="btn btn-warning h3" href="/">Play Again</a>
+</div>
+
+<script>
+    function changeMessage(message, delay) {
+        setTimeout(function() {
+            document.getElementById('message').innerText = message;
+        }, delay);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const yourDog = '@Context.Session.GetString("yourDog")';
+        const offer = '@Context.Session.GetInt32("Offer")';
+        const yourPrize = '@Context.Session.GetString("yourPrize")';
+
+        console.log(yourDog, offer, yourPrize); // Debugging: Check if these values are correctly retrieved
+
+        const dogName = `/img/${yourDog}.png`;
+        const revealPrize = `/img/${yourPrize}.png`;
+
+        changeMessage(`You sold ${yourDog} for $${offer}!`, 0);
+        changeMessage("Let's see what you would've gotten if you stuck all the way through.", 3000);
+        changeMessage(`${yourDog}, drop it!`, 8000);
+
+        const dogImageElement = document.getElementById('dogImage');
+        dogImageElement.src = dogName;
+
+        setTimeout(function() {
+            const prizeImageElement = document.getElementById('prizeImage');
+            prizeImageElement.src = revealPrize;
+            document.getElementById('playAgain').style.display = 'block';
+        }, 10000);
+    });
+</script>

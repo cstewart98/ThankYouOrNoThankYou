@@ -1,0 +1,41 @@
+@{
+    ViewData["Title"] = "Final";
+}
+@await Html.PartialAsync("_Title")
+
+<div class="text-center mt-5">
+    <img src="~/img/joelMyhrr.png" class="doggo">
+    <img src="~/img/TYoNTY_LOGO.png" id="prizeImage" class="doggo">
+    <img src="" id="dogImage" class="doggo">
+</div>
+
+<h3>
+    You get to keep @Context.Session.GetString("yourDog") and...
+</h3>
+
+<div id="playAgain" style="display: none;">
+    <a class="btn btn-warning h3" href="/">Play Again</a>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const dogName = '@Context.Session.GetString("yourDog")'; // Retrieve 'yourDog' from session
+        const dogImageElement = document.getElementById('dogImage');
+        
+        const imagePath = `/img/${dogName}.png`;
+        dogImageElement.src = imagePath;
+
+        setTimeout(function() {
+            const revealPrize = '@Context.Session.GetString("yourPrize")';
+            const prizeImageElement = document.getElementById('prizeImage');
+            
+            const prizeImagePath = `/img/${revealPrize}.png`;
+            console.log("Image path:", prizeImagePath); // Logging the route
+            
+            prizeImageElement.src = prizeImagePath;
+
+            // Show the #playAgain element after displaying the final image
+            document.getElementById('playAgain').style.display = 'block';
+        }, 10000); // Wait for 10 seconds
+    });
+</script>

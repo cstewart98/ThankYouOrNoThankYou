@@ -1,0 +1,45 @@
+@{
+    ViewData["Title"] = "Swap";
+}
+@await Html.PartialAsync("_Title")
+
+<div class="text-center mt-5">
+    <img src="~/img/joelMyhrr.png" class="doggo">
+    <img src="~/img/TYoNTY_LOGO.png" id="prizeImage" class="doggo">
+    <img src="" id="dogImage" class="doggo">
+</div>
+
+<h3 id="message"></h3>
+
+<div id="playAgain" style="display: none;">
+    <a class="btn btn-warning h3" href="/">Play Again</a>
+</div>
+
+<script>
+    function changeMessage(message, delay) {
+        setTimeout(function() {
+            document.getElementById('message').innerText = message;
+        }, delay);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const yourDog = '@Context.Session.GetString("yourDog")'; // Retrieve 'yourDog' from session
+        const newDog = '@Context.Session.GetString("newDog")';
+        const dogName = `/img/${yourDog}.png`;
+        changeMessage(`You traded ${yourDog} for ${newDog},`, 0);
+        changeMessage("Let's see what you got.", 3000);
+
+        const dogImageElement = document.getElementById('dogImage');
+        dogImageElement.src = dogName;
+
+        setTimeout(function() {
+            const yourPrize = '@Context.Session.GetString("yourPrize")';
+            const revealPrize = `/img/${yourPrize}.png`;
+            const prizeImageElement = document.getElementById('prizeImage');
+            prizeImageElement.src = revealPrize;
+
+            // Show the #playAgain element after displaying the final image
+            document.getElementById('playAgain').style.display = 'block';
+        }, 10000); // Wait for 10 seconds
+    });
+</script>

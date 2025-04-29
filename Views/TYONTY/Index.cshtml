@@ -1,0 +1,16 @@
+@model Contestant
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@await Html.PartialAsync("_Title")
+
+@* Form to enter your name *@
+<form asp-controller="TYONTY" asp-action="contestant" method="post" class="text-center mt-5 border border-light p-3 bg-grey">
+    <label class="form-label" asp-for="Name">What is your name?</label><br>
+    <input asp-for="Name" placeholder="Type here...">
+    <button type="submit" class="btn btn-primary mt-3">Play Game</button>
+    
+    <span asp-validation-for="Name" class="fst-italic text-danger"></span>
+
+</form>

@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "Drop It";
+}
+@await Html.PartialAsync("_Title")
+
+<div class="text-center mt-5">
+    <img src="~/img/joelMyhrr.png" class="doggo">
+    <img src="~/img/TYoNTY_LOGO.png" id="prizeImage" class="doggo">
+    <img src="" id="dogImage" class="doggo">
+</div>
+
+<h3>@Context.Session.GetString("dropIt"), drop it!</h3>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const dogName = '@Context.Session.GetString("dropIt")';
+    const dogImageElement = document.getElementById('dogImage');
+    
+    const imagePath = `/img/${dogName}.png`;
+    dogImageElement.src = imagePath;
+
+    setTimeout(function() {
+        const revealPrize = '@Context.Session.GetString("revealPrize")';
+        const prizeImageElement = document.getElementById('prizeImage');
+        
+        const prizeImagePath = `/img/${revealPrize}.png`;
+        console.log("Image path:", prizeImagePath); // Logging the route
+        
+        prizeImageElement.src = prizeImagePath;
+
+        setTimeout(function() {
+            // Redirect to 'tyonty/game' route after 5 seconds
+            window.location.href = '/tyonty/eliminate';
+        }, 5000); // Wait for 5 seconds before redirecting
+    }, 10000); // Wait for 10 seconds
+});
+
+</script>
